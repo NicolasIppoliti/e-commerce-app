@@ -1,5 +1,6 @@
 import './NavBar.css';
-import logoElsie from '../img/logo-elsie.png'
+import logoElsie from '../../img/logoElsie.png';
+import CartWidget from '../CartWidget/CartWidget';
 
 export default function NavBar() {
     return (
@@ -10,11 +11,11 @@ export default function NavBar() {
                 </div>
             </nav>
             <nav className='flex flex-row pt-4 items-center'>
-                <div className='logo-navbar basis-1/4'>
+                <div className='shrink basis-1/4'>
                     <img className='aspect-auto pl-10' src={logoElsie} alt="Logo Elsie"/>
                 </div>
-                <div className='menu-navbar basis-1/2'>
-                    <ul className='columns-3'>
+                <div className='flex-auto grow shrink basis-1/2'>
+                    <ul className='columns-5'>
                         <li>
                             <a href='../index.js'>INICIO</a>
                         </li>
@@ -22,14 +23,18 @@ export default function NavBar() {
                             <a href='../index.js'>PRODUCTOS</a>
                         </li>
                         <li>
+                            <a href='../index.js'>HOMBRES</a>
+                        </li>
+                        <li>
+                            <a href='../index.js'>MUJERES</a>
+                        </li>
+                        <li>
                             <a href='../index.js'>CONTACTO</a>
                         </li>
                     </ul>
                 </div>
-                <div className='container mx-auto basis-1/4'>
-                    <div>
-                        
-                    </div>
+                <div className='container shrink basis-1/4'>
+                    <CartWidget/>
                 </div>
             </nav>
         </header>
