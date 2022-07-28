@@ -6,7 +6,8 @@ function App() {
   return (
     <div className="App bg-white font-sans">
       <NavBar/>
-      <ItemListContainer/>
+      <ItemListContainer
+        greeting='Bienvenido a mi pagina web'/>
     </div>
   );
 }
