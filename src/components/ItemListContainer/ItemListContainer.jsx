@@ -1,10 +1,11 @@
+import Products from '../ProductsList/Products/Products';
+import ProductsList from '../ProductsList/ProductsList';
 import './ItemListContainer.css';
-
 
 const ItemListContainer = (props) => {
 return (
-    <div>
-        <h1 className='pt-10 text-2xl font-light text-center align-middle'>{props.greeting}</h1>
+    <div className='font-light pt-28'>
+        <ProductsList/>
     </div>
 )}
 
