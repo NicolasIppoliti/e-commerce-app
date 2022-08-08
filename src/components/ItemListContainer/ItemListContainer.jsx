@@ -1,4 +1,3 @@
-import Products from '../ProductsList/Products/Products';
 import ProductsList from '../ProductsList/ProductsList';
 import './ItemListContainer.css';
 
