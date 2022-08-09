@@ -4,7 +4,7 @@ import favorites from '../../../img/love.svg'
 
 const Items = (props) => {
     return (
-            <div className="bg-white text-gray-700 w-72 min-h-[10rem] shadow-lg rounded-md overflow-hidden mx-auto mb-5">
+            <div className="bg-white text-gray-700 w-72 min-h-[10rem] shadow-lg rounded-md overflow-hidden mx-auto mb-5 sm:grid">
                 <img
                     src={props.img}
                     className="w-full h-full object-cover"

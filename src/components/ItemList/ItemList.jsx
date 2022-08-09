@@ -19,7 +19,7 @@ const ItemList = () => {
     }, [])
 
     return (
-        <div className=''>
+        <div className='sm:grid sm:grid-cols-2 sm:gap-4 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5'>
             {items.map((item) => {
                 return (
                 <Items 

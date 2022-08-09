@@ -19,7 +19,7 @@ const ItemDetail = () => {
     }, [])
 
     return (
-        <div>
+        <div className='grid'>
             <Items name={items.name} role={items.role} img={items.img} stock={items.stock} price={items.price} discount={items.discount} description={items.description}/>
         </div>
     );
