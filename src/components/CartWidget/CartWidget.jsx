@@ -1,4 +1,3 @@
-import './CartWidget.css';
 import cartWidget from '../../img/cartWidget.svg';
 
 const CartWidget = () => {

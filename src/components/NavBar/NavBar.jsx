@@ -1,4 +1,3 @@
-import './NavBar.css';
 import logoElsie from '../../img/logoElsie.png';
 import CartWidget from '../CartWidget/CartWidget';
 import { useState } from 'react';

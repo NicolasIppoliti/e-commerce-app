@@ -2,7 +2,7 @@ import React from 'react'
 import ItemCount from '../../ItemCount/ItemCount'
 import favorites from '../../../img/love.svg'
 
-const Products = (props) => {
+const Items = (props) => {
     return (
             <div className="bg-white text-gray-700 w-72 min-h-[10rem] shadow-lg rounded-md overflow-hidden mx-auto mb-5">
                 <img
@@ -29,7 +29,7 @@ const Products = (props) => {
                             </span>
                         </div>
                         <div className='mt-5 flex gap-2'>
-                            <ItemCount stock={5} initial={1}/>
+                            <ItemCount stock={props.stock} initial={1}/>
                         </div>
                         <div className='mt-5 flex gap-2'>
                             <button className='bg-blue-500/90 hover:bg-blue-500/100 px-4 py-2 rounded-md text-white font-medium tracking-wider transition'>
@@ -45,4 +45,4 @@ const Products = (props) => {
     )
 } 
 
-export default Products
+export default Items;

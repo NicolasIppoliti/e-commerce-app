@@ -1,11 +1,10 @@
-import ProductsList from '../ProductsList/ProductsList';
-import './ItemListContainer.css';
+import ItemList from '../ItemList/ItemList';
 
-const ItemListContainer = (props) => {
+const ItemListContainer = () => {
 return (
     <div className='font-light pt-28'>
-        <ProductsList/>
+        <ItemList/>
     </div>
 )}
 
-export default ItemListContainer
+export default ItemListContainer;
