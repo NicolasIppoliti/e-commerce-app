@@ -15,7 +15,6 @@ const ItemListContainer = () => {
             } else {
                 let categoryFilter = response.filter(prod => prod.category === category)
                 setItems(categoryFilter)
-                console.log(categoryFilter)
             }
         })
     })
