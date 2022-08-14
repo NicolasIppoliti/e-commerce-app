@@ -1,11 +1,11 @@
-import React from 'react'
-import ItemCount from '../../ItemCount/ItemCount'
-import favorites from '../../../img/love.svg'
-import freeShipping from '../../../img/truck-solid.png'
+import ItemCount from '../../ItemCount/ItemCount';
+import favorites from '../../../img/love.svg';
+import freeShipping from '../../../img/truck-solid.png';
 
 const Items = (props) => {
+
     return (
-            <div className="bg-white text-gray-700 w-full h-full overflow-hidden sm:grid sm:grid-cols-2 xl:grid-cols-3">
+            <div className="bg-white text-gray-700 items-center w-full h-full overflow-hidden sm:grid sm:grid-cols-2 xl:grid-cols-3">
                 <div className='mx-10 mt-10'>
                 <img
                     src={props.img}

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 const ItemCount = (props) => {
 
-    const [count, setCount] = useState(1);
+    const [count, setCount] = useState(props.initial);
 
     const handleDecrement=()=>{
         count > props.initial ? setCount(count-1) : setCount(count)

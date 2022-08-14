@@ -8,7 +8,7 @@ const Items = (props) => {
                 <img
                     src={props.img}
                     className="w-full h-full object-cover"
-                    alt=""
+                    alt={props.id}
                 />
                 <div className="p-5 flex flex-col gap-3">
                     <div className='flex items-center gap-2'>

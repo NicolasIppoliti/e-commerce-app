@@ -1,36 +1,22 @@
-import React, {useState, useEffect} from 'react';
-import Items from './Items/Items';
-import ItemData from '../../data/data';
+import Items from './Items/Items'
+import {Link} from 'react-router-dom'
 
-const getItems = () => {
-
-    return new Promise((resolve) => {
-        setTimeout(() => resolve(ItemData), 2000);
-    })
-}
-
-const ItemList = () => {
-    const [items, setItems] = useState([]);
-
-    useEffect(() => {
-        getItems().then((resp) => {
-            setItems(resp);
-        })
-    }, [])
-
+const ItemList = ({items}) => {
     return (
         <div className='sm:grid sm:grid-cols-2 sm:gap-4 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5'>
             {items.map((item) => {
                 return (
-                <Items 
-                key={item.id}
+                <Link to={`/products/${item.id}`}>
+                <Items
+                id={item.id}
                 name={item.name} 
                 img={item.img} 
-                role={item.role}
+                category={item.category}
                 price={item.price}
                 discount={item.discount}
                 stock={item.stock}/>
-                );
+                </Link>
+                )
             })}
         </div>
     );

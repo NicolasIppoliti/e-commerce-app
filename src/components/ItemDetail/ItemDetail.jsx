@@ -1,26 +1,23 @@
-import React, {useState, useEffect} from 'react';
 import Items from './Items/Items';
-import ItemData from '../../data/data';
-
-const getItems = () => {
-
-    return new Promise((resolve) => {
-        setTimeout(() => resolve(ItemData[0]), 2000);
-    })
-}
+import { getProductsById } from '../../data/customFetch';
+import { useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
 const ItemDetail = () => {
-    const [items, setItems] = useState([]);
+
+    const [items, setItems] = useState({})
+
+    const {id} = useParams()
 
     useEffect(() => {
-        getItems().then((resp) => {
-            setItems(resp);
+        getProductsById(id).then((response) => {
+            setItems(response);
         })
-    }, [])
+    })
 
     return (
-        <div className='grid'>
-            <Items name={items.name} role={items.role} img={items.img} stock={items.stock} price={items.price} discount={items.discount} description={items.description}/>
+        <div className='grid font-light pt-16'>
+            <Items {...items}/>
         </div>
     );
 };
