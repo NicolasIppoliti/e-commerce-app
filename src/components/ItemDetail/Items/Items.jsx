@@ -1,8 +1,16 @@
 import ItemCount from '../../ItemCount/ItemCount';
-import favorites from '../../../img/love.svg';
 import freeShipping from '../../../img/truck-solid.png';
+import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 const Items = (props) => {
+
+    const [cantProd, setCantProd] = useState(1)
+
+    const handleAdd = (count) => {
+        console.log('Agregar al carrito', count)
+        setCantProd(count)
+    }
 
     return (
             <div className="bg-white text-gray-700 items-center w-full h-full overflow-hidden sm:grid sm:grid-cols-2 xl:grid-cols-3">
@@ -34,22 +42,17 @@ const Items = (props) => {
                             Stock disponible
                             <span className='pl-3 font-light text-gray-300'>({props.stock} disponibles)</span>
                         </div>
-                        <div className='mt-5 flex gap-2'>
-                            <ItemCount stock={props.stock} initial={1}/>
-                            <button className='flex px-4 py-2 opacity-50 hover:opacity-100 sm:px-0 sm:py-0'>
-                                <img className='mr-5 sm:mr-0 sm:mt-2 sm:ml-2 md:ml-3' src={favorites} alt="add to favorites" />
-                                <span className='text-xs text-gray-400 mt-1 sm:ml-3 sm:mt-3'>Agregar a favoritos</span>
-                            </button>
+                        <div className=''>
+                        { cantProd === 1 ? (
+                            <ItemCount stock={props.stock} initial={1} onAdd={handleAdd}/> )
+                            : ('')}
                         </div>
-                        <div className='mt-5 flex gap-2 sm:mt-7 lg:mt-10 2xl:mt-14'>
+                        <div className='mt-2 flex gap-2'>
+                            <Link to={`/cart`} className='w-full'>
                             <button className='bg-blue-600/90 hover:bg-blue-600/100 px-4 py-2 w-full rounded-md text-white font-medium tracking-wider transition'>
                                 Comprar ahora
                             </button>
-                        </div>
-                        <div className='mt-2 flex gap-2'>
-                            <button className='bg-blue-200/90 hover:bg-blue-200/100 px-4 py-2 w-full rounded-md text-blue-500 font-medium tracking-wider transition'>
-                                Agregar al carrito
-                            </button>
+                            </Link>
                         </div>
                     </div>
                 </div>

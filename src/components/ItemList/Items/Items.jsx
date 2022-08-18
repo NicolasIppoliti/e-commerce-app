@@ -5,14 +5,13 @@ import {Link} from 'react-router-dom'
 
 const Items = (props) => {
     return (
+        <Link to={`/products/${props.id}`}>
             <div className="bg-white text-gray-700 w-72 min-h-[10rem] shadow-lg rounded-md overflow-hidden mx-auto mb-5 sm:grid">
-            <Link to={`/products/${props.id}`}>
                 <img
                     src={props.img}
                     className="w-full h-full object-cover"
                     alt={props.id}
                 />
-            </Link>
                 <div className="p-5 flex flex-col gap-3">
                     <div className='flex items-center gap-2'>
                         <span className='badge'>Envio gratis</span>
@@ -31,20 +30,10 @@ const Items = (props) => {
                                 20% OFF
                             </span>
                         </div>
-                        <div className='mt-5 flex gap-2'>
-                            <ItemCount stock={props.stock} initial={1}/>
-                        </div>
-                        <div className='mt-5 flex gap-2'>
-                            <button className='bg-blue-500/90 hover:bg-blue-500/100 px-4 py-2 rounded-md text-white font-medium tracking-wider transition'>
-                                Agregar al carrito
-                            </button>
-                            <button className='px-4 py-2 opacity-50 hover:opacity-100'>
-                                <img className='' src={favorites} alt="add to favorites" />
-                            </button>
-                        </div>
                     </div>
                 </div>
             </div>
+        </Link>
     )
 } 
 
