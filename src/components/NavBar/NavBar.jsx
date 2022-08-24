@@ -1,4 +1,3 @@
-import logoElsie from '../../img/logoElsie.png';
 import CartWidget from '../CartWidget/CartWidget';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -19,7 +18,7 @@ export default function NavBar() {
             <div className='md:flex items-center justify-between bg-white py-4 md:px-10 px-7'>
                 <div className='cursor-pointer flex items-center'>
                     <Link to='/'>
-                        <img className='h-10' src={logoElsie} alt="Logo Elsie"/>
+                        <img className='h-10' src='/img/logoElsie.png' alt="Logo Elsie"/>
                     </Link>
                 </div>
 

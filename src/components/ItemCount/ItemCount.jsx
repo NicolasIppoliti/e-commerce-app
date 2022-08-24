@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import favorites from '../../img/love.svg';
 
 const ItemCount = (props) => {
 
@@ -22,7 +21,7 @@ const ItemCount = (props) => {
                 <button className='bg-blue-500 px-4 py-1 rounded-md text-white font-medium tracking-wider transition' onClick={handleIncrement}>+</button>
             </div>
             <button className='flex px-4 py-2 opacity-50 hover:opacity-100 sm:px-0 sm:py-0'>
-                <img className='mr-5 sm:mr-0 sm:mt-2 sm:ml-2 md:ml-3' src={favorites} alt="add to favorites" />
+                <img className='mr-5 sm:mr-0 sm:mt-2 sm:ml-2 md:ml-3' src='/img/love.svg' alt="add to favorites" />
                 <span className='text-xs text-gray-400 mt-1 sm:ml-3 sm:mt-3'>Agregar a favoritos</span>
             </button>
         </div>

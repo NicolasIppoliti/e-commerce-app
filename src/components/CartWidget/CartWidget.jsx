@@ -1,8 +1,13 @@
-import cartWidget from '../../img/cartWidget.svg';
+import { Link } from "react-router-dom"
 
 const CartWidget = () => {
 return (
-    <img className='w-6 h-6' src={cartWidget} alt="" />
+    <div>
+        <span>0</span>
+        <Link to='/cart'>
+            <img className='w-6 h-6' src='/img/cartWidget.svg' alt="" />
+        </Link>
+    </div>
 )}
 
 export default CartWidget
