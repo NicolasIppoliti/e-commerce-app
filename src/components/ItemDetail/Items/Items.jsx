@@ -6,14 +6,12 @@ import { useState } from 'react';
 
 const Items = ({id, name, price, img, category, stock, discount, description}) => {
 
-    const qtyCart = 0;
-    const [quantityInCart, setQuantityInCart] = useState(qtyCart);
-    const {addToCart} = useContext(CartContext);
+    const {cart, isInCart, addToCart, removeFromCart, removeAllFromCart} = useContext(CartContext);
+    const [quantity, setQuantity] = useState(1);
 
-    const handleAdd = (quantity) => {
-        setQuantityInCart(quantity);
-        let itemToCart = {id, name, price, img, category, stock, discount, description};
-        addToCart(itemToCart, quantity);
+    const addToCartHandler = (quantity) => {
+        addToCart({id, name, price, img, category, stock, discount, description}, quantity);
+        setQuantity(quantity);
     }
 
     return (
@@ -46,7 +44,7 @@ const Items = ({id, name, price, img, category, stock, discount, description}) =
                             Stock disponible
                             <span className='pl-3 font-light text-gray-300'>({stock} disponibles)</span>
                         </div>
-                            <ItemCount stock={stock} initial={1} onAdd={handleAdd}/>
+                            <ItemCount stock={stock} initial={1} onAdd={addToCartHandler}/>
                         <div className='mt-2 flex gap-2'>
                             <Link to={`/cart`} className='w-full'>
                             <button className='bg-blue-600/90 hover:bg-blue-600/100 px-4 py-2 w-full rounded-md text-white font-medium tracking-wider transition'>

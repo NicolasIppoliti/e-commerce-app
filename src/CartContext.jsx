@@ -5,50 +5,42 @@ export const CartContext = createContext();
 export function CartContextProvider({children}) {
     const [cart, setCart] = useState([]);
 
-    let copyCart = [...cart];
+    const isInCart = (item) => {
+        return cart.findIndex(i => i.id === item.id) !== -1;
+    }
 
-    function addToCart(item, quantity){
-        if(!isInCart(item.id)){
-            copyCart.push( {...item, quantity} );
-            setCart(copyCart);
-        } else {
-            let cartUpdate = cart.map((prod) => {
-                if(prod.id === item.id){
-                    let productUpdate = {
-                        ...prod,
-                        quantity: parseInt(quantity + prod.quantity),
-                    }
-                    return productUpdate
-                } else {
-                    return prod
+    const addToCart = (item, quantity) => {
+        console.log(item, quantity);
+        if (isInCart(item)) {
+            const newCart = cart.map(i => {
+                if (i.id === item.id) {
+                    return {...i, quantity: i.quantity + quantity};
                 }
-            })
-            setCart(cartUpdate)
+                return i;
+            }).filter(i => i.quantity > 0);
+            setCart(newCart);
+        } else {
+            setCart([...cart, {...item, quantity}]);
         }
     }
 
-    function isInCart (id){
-        return (cart.some((itemInCart) => itemInCart.id === id))
+    const removeFromCart = (item) => {
+        const newCart = cart.map(i => {
+            if (i.id === item.id) {
+                return {...i, quantity: i.quantity - 1};
+            }
+            return i;
+        }).filter(i => i.quantity > 0);
+        setCart(newCart);
     }
 
-    function clearCart (){
-        setCart([])
-    }
-
-    function removeItem (item){
-        const itemRemove = findItem(item.id);
-        const indexItem = copyCart.indexOf(itemRemove);
-        copyCart.splice(indexItem, 1);
-        setCart(copyCart);
-        console.log(copyCart);
-    }
-
-    function findItem(id){
-        return (copyCart.find(item => item.id === (id)))
+    const removeAllFromCart = (item) => {
+        const newCart = cart.filter(i => i.id !== item.id);
+        setCart(newCart);
     }
 
     return (
-        <CartContext.Provider value={{cart, addToCart, clearCart, removeItem, isInCart}}>
+        <CartContext.Provider value={{cart, isInCart, addToCart, removeFromCart, removeAllFromCart}}>
             {children}
         </CartContext.Provider>
     )
