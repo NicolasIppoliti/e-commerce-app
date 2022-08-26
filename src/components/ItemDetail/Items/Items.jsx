@@ -7,6 +7,7 @@ import { useState } from 'react';
 const Items = ({id, name, price, img, category, stock, discount, description}) => {
 
     const {addToCart} = useContext(CartContext);
+    // eslint-disable-next-line
     const [quantity, setQuantity] = useState(1);
 
     const addToCartHandler = (quantity) => {
