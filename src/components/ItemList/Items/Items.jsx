@@ -18,11 +18,11 @@ const Items = (props) => {
                     <h4 className='font-medium text-xl overflow-ellipsis overflow-hidden whitespace-nowrap'>{props.name}</h4>
                     <div>
                         <span className='text-2xl font-light'>
-                            {props.discount}
+                            ${props.discount}
                         </span>
                         <div className='flex items-center gap-2 mt-1'>
                             <span className='text-sm line-through opacity-50'>
-                                {props.price}
+                                ${props.price}
                             </span>
                             <span className='bg-green-600 px-1.5 py-0.5 rounded-md text-xs text-white'>
                                 20% OFF
