@@ -4,7 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import ItemDetail from './components/ItemDetail/ItemDetail';
 import UserForm from './components/UserForm/UserForm';
 import {CartContextProvider} from './CartContext';
-import firestoreDB from './services/firebase';
+import CartView from './components/CartView/CartView';
 
 function App() {
   return (
@@ -17,6 +17,7 @@ function App() {
           <Route exact path='/products/:id' element={<ItemDetail/>}/>
           <Route exact path='/category/:category' element={<ItemListContainer/>}/>
           <Route exact path='/contact' element={<UserForm/>}/>
+          <Route exact path='/cart' element={<CartView/>}/>
         </Routes>
       </div>
     </CartContextProvider>

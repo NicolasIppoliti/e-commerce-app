@@ -6,7 +6,7 @@ import { useState } from 'react';
 
 const Items = ({id, name, price, img, category, stock, discount, description}) => {
 
-    const {cart, isInCart, addToCart, removeFromCart, removeAllFromCart} = useContext(CartContext);
+    const {addToCart} = useContext(CartContext);
     const [quantity, setQuantity] = useState(1);
 
     const addToCartHandler = (quantity) => {
@@ -26,11 +26,11 @@ const Items = ({id, name, price, img, category, stock, discount, description}) =
                     <h4 className='font-medium text-xl overflow-ellipsis overflow-hidden whitespace-nowrap sm:mt-4 md:mt-10 lg:text-2xl 2xl:pb-3'>{name}</h4>
                     <div>
                         <span className='text-2xl font-light'>
-                            {discount}
+                            ${discount}
                         </span>
                         <div className='flex items-center gap-2 mt-1'>
                             <span className='text-sm line-through opacity-50'>
-                                {price}
+                                ${price}
                             </span>
                             <span className='bg-green-600 px-1.5 py-0.5 rounded-md text-xs text-white'>
                                 20% OFF

@@ -16,9 +16,15 @@ const ItemCount = (props) => {
     <>
         <div className='mt-5 flex gap-2'>
             <div className='flex bg-slate-50'>
-                <button className='bg-blue-500 px-4 py-1 rounded-md text-white font-medium tracking-wider transition' onClick={handleDecrement}>-</button>
+                <button className='bg-blue-500 px-4 py-1 rounded-md text-white font-medium tracking-wider transition' onClick={handleDecrement}>
+                    <svg className="fill-current text-gray-600 w-3" viewBox="0 0 448 512"><path d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"/></svg>
+                </button>
                 <h3 className='px-8 py-2 rounded-md'>{quantity}</h3>
-                <button className='bg-blue-500 px-4 py-1 rounded-md text-white font-medium tracking-wider transition' onClick={handleIncrement}>+</button>
+                <button className='bg-blue-500 px-4 py-1 rounded-md text-white font-medium tracking-wider transition' onClick={handleIncrement}>
+                    <svg className="fill-current text-gray-600 w-3" viewBox="0 0 448 512">
+                        <path d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"/>
+                    </svg>
+                </button>
             </div>
             <button className='flex px-4 py-2 opacity-50 hover:opacity-100 sm:px-0 sm:py-0'>
                 <img className='mr-5 sm:mr-0 sm:mt-2 sm:ml-2 md:ml-3' src='/img/love.svg' alt="add to favorites" />

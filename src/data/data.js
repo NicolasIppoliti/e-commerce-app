@@ -22,7 +22,7 @@ const ProductData = [
     {
         id: 'remera-classic-rock',
         name: 'Remera Classic Rock',
-        category: 'Remeras',
+        category: 'remeras',
         img: '/img/3.png',
         stock: 5,
         price: 7000,
