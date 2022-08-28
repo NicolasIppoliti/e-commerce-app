@@ -8,8 +8,6 @@ export default function NavBar() {
         {id:'products', name:'PRODUCTOS', link:'/products'},
         {id:'tejidos', name:'TEJIDOS', link:'/category/tejidos'},
         {id:'vestidos', name:'VESTIDOS', link:'/category/vestidos'},
-        {id:'hombre', name:'HOMBRE', link:'/hombre'},
-        {id:'mujer', name:'MUJER', link:'/mujer'},
         {id:'contact', name:'CONTACTO', link:'/contact'},
     ];
     let [open,setOpen] = useState(false);

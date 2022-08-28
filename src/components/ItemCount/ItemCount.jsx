@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const ItemCount = (props) => {
 
@@ -32,9 +33,18 @@ const ItemCount = (props) => {
             </button>
         </div>
         <div className='mt-5 flex gap-2 sm:mt-7 lg:mt-10 2xl:mt-14'>
-            <button onClick={()=>props.onAdd(quantity)} className='bg-blue-200/90 hover:bg-blue-200/100 px-4 py-2 w-full rounded-md text-blue-500 font-medium tracking-wider transition'>
-                Agregar al carrito
-            </button>
+            <Link to={'/cart'} className='w-full'>
+                <button onClick={()=>props.onAdd(quantity)} className='bg-blue-200/90 hover:bg-blue-200/100 px-4 py-2 w-full rounded-md text-blue-500 font-medium tracking-wider transition'>
+                    Agregar al carrito
+                </button>
+            </Link>
+        </div>
+        <div className='mt-2 flex gap-2'>
+            <Link to={'/cart'} className='w-full'>
+                <button onClick={()=>props.onAdd(quantity)} className='bg-blue-600/90 hover:bg-blue-600/100 px-4 py-2 w-full rounded-md text-white font-medium tracking-wider transition'>
+                    Comprar ahora
+                </button>
+            </Link>
         </div>
     </>
     )

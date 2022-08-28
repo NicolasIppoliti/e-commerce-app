@@ -1,5 +1,4 @@
 import ItemCount from '../../ItemCount/ItemCount';
-import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { CartContext } from '../../../CartContext';
 import { useState } from 'react';
@@ -46,13 +45,6 @@ const Items = ({id, name, price, img, category, stock, discount, description}) =
                             <span className='pl-3 font-light text-gray-300'>({stock} disponibles)</span>
                         </div>
                             <ItemCount stock={stock} initial={1} onAdd={addToCartHandler}/>
-                        <div className='mt-2 flex gap-2'>
-                            <Link to={`/cart`} className='w-full'>
-                            <button className='bg-blue-600/90 hover:bg-blue-600/100 px-4 py-2 w-full rounded-md text-white font-medium tracking-wider transition'>
-                                Comprar ahora
-                            </button>
-                            </Link>
-                        </div>
                     </div>
                 </div>
                 <div className='px-5 py-3 flex flex-col gap-3 sm:mt-5 xl:pt-14 xl:order-2'>
