@@ -1,10 +1,29 @@
 import React, { useContext } from 'react'
 import { CartContext } from '../../CartContext';	
 import { Link } from 'react-router-dom';
+import { addDoc, getFirestore, collection } from 'firebase/firestore';
 
 const CartView = () => {
 
     const { cart, removeProduct, totalPrice, totalProducts } = useContext(CartContext);
+
+    const order = {
+        buyer: {
+            name: 'Nombre ejemplo',
+            email: 'email@ejemplo.com',
+            phone: '123456789',
+            address: 'Calle de Ejemplo 123'
+        },
+        products: cart.map(product => ({ id: product.id, name: product.name, price: product.discount, quantity: product.quantity })),
+        total: totalPrice(),
+    }
+
+    const handleClick = () => {
+        const db = getFirestore();
+        const ordersCollection = collection(db, 'orders');
+        addDoc(ordersCollection, order).then(({id}) => 
+            alert(`Su pedido se ha realizado con éxito. Su número de pedido es: ${id}`));
+    }
 
     if(cart.length === 0) {
         return (
@@ -49,8 +68,8 @@ const CartView = () => {
                         <div className="flex justify-center w-2/5 sm:w-1/5">
                             <input className="mr-4 sm:mx-2 border text-xs sm:text-sm text-center w-8" type="text" value={item.quantity} readOnly/>
                         </div>
-                        <span className="text-center w-2/5 sm:w-1/5 font-semibold text-xs sm:text-sm">${item.price}</span>
-                        <span className="text-center w-2/5 sm:w-1/5 font-semibold text-xs sm:text-sm">${item.price * item.quantity}</span>
+                        <span className="text-center w-2/5 sm:w-1/5 font-semibold text-xs sm:text-sm">${item.discount}</span>
+                        <span className="text-center w-2/5 sm:w-1/5 font-semibold text-xs sm:text-sm">${item.discount * item.quantity}</span>
                     </div>
                     ))}
                 <Link to='/' className="flex font-semibold text-indigo-600 text-sm mt-10">
@@ -80,7 +99,7 @@ const CartView = () => {
                             <span>Costo total</span>
                             <span>${totalPrice()}</span>
                         </div>
-                        <button className="bg-indigo-500 font-semibold hover:bg-indigo-600 py-3 text-sm text-white uppercase w-full">Finalizar Compra</button>
+                        <button onClick={handleClick} className="bg-indigo-500 font-semibold hover:bg-indigo-600 py-3 text-sm text-white uppercase w-full">Finalizar Compra</button>
                     </div>
                 </div>
             </div>

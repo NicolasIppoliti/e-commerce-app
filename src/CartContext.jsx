@@ -20,7 +20,7 @@ export function CartContextProvider({children}) {
     }
 
     const totalPrice = () => {
-        return cart.reduce((prev, act) => Number(prev + act.price * act.quantity), 0);
+        return cart.reduce((prev, act) => Number(prev + act.discount * act.quantity), 0);
     }
 
     const totalProducts = () => {
