@@ -19,7 +19,7 @@ const CartView = () => {
     }
 
     return (
-        <div className="mx-auto container mt-20">
+        <div className="mx-auto mt-20 w-full">
             <div className="shadow-md my-10">
                 <div className="w-full bg-white px-10 py-10">
                     <div className="flex justify-between border-b pb-8">

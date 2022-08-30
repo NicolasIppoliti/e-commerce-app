@@ -13,7 +13,7 @@ export default function NavBar() {
     let [open,setOpen] = useState(false);
     return (
         <div className='shadow-md w-full fixed top-0 left-0'>
-            <div className='md:flex items-center justify-between bg-white py-4 md:px-10 px-7'>
+            <div className='md:flex items-center justify-between bg-white py-4 px-4'>
                 <div className='cursor-pointer flex items-center'>
                     <Link to='/'>
                         <img className='h-10' src='/img/logoElsie.png' alt="Logo Elsie"/>
@@ -27,8 +27,8 @@ export default function NavBar() {
                 <ul className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static bg-white md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${open ? 'top-20 ':'top-[-490px]'}`}>
                     {
                         Links.map((link) =>(
-                            <li key={link.id} className='md:ml-8 md:text-center md:mr-4 md:pr-4 md:text-sm text-xl md:my-0 my-7'>
-                                <Link to={link.link} className='text-black hover:text-gray-500 duration-500'>{link.name}</Link>
+                            <li key={link.id} className='md:ml-5 md:text-center md:mr-4 md:pr-4 md:text-sm text-xl md:my-0 my-7'>
+                                <Link to={link.link} onClick={()=>setOpen(!open)} className='text-black hover:text-gray-500 duration-500'>{link.name}</Link>
                             </li>
                         ))
                     }
