@@ -16,6 +16,7 @@ const CartView = () => {
         },
         products: cart.map(product => ({ id: product.id, name: product.name, price: product.discount, quantity: product.quantity })),
         total: totalPrice(),
+        date: new Date(),
     }
 
     const handleClick = () => {
