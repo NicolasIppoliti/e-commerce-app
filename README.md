@@ -29,10 +29,7 @@
 <li>Rendering</li>
 </ul>
 <h2>Screenshots</h2>
-[![Captura-web-30-8-2022-204613-elsie-boutique-netlify-app.jpg](https://i.postimg.cc/jSW0L280/Captura-web-30-8-2022-204613-elsie-boutique-netlify-app.jpg)](https://postimg.cc/BjGwzS9M)
-[![Captura-web-30-8-2022-204627-elsie-boutique-netlify-app.jpg](https://i.postimg.cc/TYNvdgJJ/Captura-web-30-8-2022-204627-elsie-boutique-netlify-app.jpg)](https://postimg.cc/kBSpwVZ2)
-[![Captura-web-30-8-2022-204649-elsie-boutique-netlify-app.jpg](https://i.postimg.cc/c1mNzVKj/Captura-web-30-8-2022-204649-elsie-boutique-netlify-app.jpg)](https://postimg.cc/jCL9w34Q)
-[![Captura-web-30-8-2022-204637-elsie-boutique-netlify-app.jpg](https://i.postimg.cc/BQnGfMHv/Captura-web-30-8-2022-204637-elsie-boutique-netlify-app.jpg)](https://postimg.cc/DmHNqQCV)
+
 <h2>Setup</h2>
 <hr><p>Dependencias del Proyecto:</p>
 <p>"@fortawesome/fontawesome-svg-core": "^6.1.2".</p>
