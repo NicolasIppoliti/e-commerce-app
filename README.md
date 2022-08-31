@@ -29,7 +29,10 @@
 <li>Rendering</li>
 </ul>
 <h2>Screenshots</h2>
-
+<img src="/img/ProductList.jpg" alt="Product List">
+<img src="/img/ProductDetail.jpg" alt="Product Detail">
+<img src="/img/CartView.jpg" alt="Cart View">
+<img src="/img/ContactForm.jpg" alt="Contact Form">
 <h2>Setup</h2>
 <hr><p>Dependencias del Proyecto:</p>
 <p>"@fortawesome/fontawesome-svg-core": "^6.1.2".</p>
