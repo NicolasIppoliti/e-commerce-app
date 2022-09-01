@@ -11,3 +11,12 @@ const firebaseConfig = {
 
 // Initialize Firebase
 initializeApp(firebaseConfig);
+
+// export async function saveProductsToFirebase(){
+//     const collectionProducts = collection(queryDB, "products")
+//     for(let items of itemData){
+//         const docref = await addDoc(collectionProducts, items)
+//         console.log(docref.id)
+//     }
+// }
+// FUNCTION PARA SUBIR TODOS LOS ITEMS A FIREBASE
